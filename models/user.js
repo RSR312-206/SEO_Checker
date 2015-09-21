@@ -19,7 +19,6 @@ var userSchema = new Schema({
   }]
 });
 
-var User = mongoose.model("User", userSchema);
 
 
 userSchema.pre('save', function(next) {
@@ -54,5 +53,17 @@ userSchema.statics.authenticate = function(formData, callback) {
   });
 };
 
+userSchema.methods.checkPassword = function(password, callback) {
+  var user = this;
+  bcrypt.compare(user.password, password, function (err, isMatch) {
+    if (isMatch) {
+      callback(null, user);
+    } else {
+      callback(err, null)
+    }
+  });
+}
+
+var User = mongoose.model("User", userSchema);
 
 module.exports = User;
