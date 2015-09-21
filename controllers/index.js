@@ -5,7 +5,12 @@ require('./users');
 require('./websites')
 //require the rest of the controllers
 
+app.get('/', routeMiddleware.preventLoginSignup, function(req, res){
+  res.redirect('/users');
+});
 
 app.get('*', function(req, res){
   res.render('404');
 });
+
+

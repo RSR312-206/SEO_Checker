@@ -4,6 +4,7 @@
 
 var websiteSchema = new Schema({
   url: String,
+  keyword: String,
   user:  [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "User"

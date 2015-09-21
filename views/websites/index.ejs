@@ -1,1 +1,11 @@
-<h1>test</h1>
+<h1>SEO Checker</h1>
+<p>discover broken links, matching keywords to meta tags, and other useful data about your website
+</p>
+
+<% websites.forEach(function(website){ %>
+<%= website.url %>
+<% }); %>
+
+<a href="/websites/new">check a new website</a>
+<br>
+<a href="/logout">Logout</a>
