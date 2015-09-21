@@ -1,5 +1,6 @@
  var mongoose = require('mongoose');
  var Schema = mongoose.Schema;
+ var User = require('./user');
 
 var websiteSchema = new Schema({
   url: String,

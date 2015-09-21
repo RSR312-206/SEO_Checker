@@ -1,5 +1,6 @@
  var mongoose = require('mongoose');
- var Schema = mongoose.Schema
+ var Schema = mongoose.Schema;
+ var Website = require('./website');
 
 var linkSchema = new Schema({
   link: String,
