@@ -1,11 +1,16 @@
 <h1>SEO Checker</h1>
 <p>discover broken links, matching keywords to meta tags, and other useful data about your website
 </p>
-
+<table>
+  <tbody>
 <% websites.forEach(function(website){ %>
-<%= website.url %>
+  <tr><td><a href="/websites/<%=website._id%>/"><%= website.url %></a></td></tr>
 <% }); %>
-
+  </tbody>
+<table>
+<br>
 <a href="/websites/new">check a new website</a>
 <br>
-<a href="/logout">Logout</a>
+<form action="/users/logout" method="GET">
+  <button>Logout</button>
+</form>

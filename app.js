@@ -3,8 +3,12 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var db = require('./models');
 var session = require('cookie-session');
+var request = require('request');
 var loginMiddleware = require('./middleware/loginHelper');
 var routeMiddleware = require('./middleware/routeHelper');
+var request = require('request');
+var CryptoJS = require("crypto-js");
+var SHA1 = require("crypto-js/sha1");
 
 
 app = express();

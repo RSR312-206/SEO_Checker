@@ -1,0 +1,9 @@
+<%= website.url %>
+
+<form action="/websites/<%=website.id%>?_method=DELETE" method="POST">
+  <input type='submit'value="DELETE">
+</form>
+<br>
+<a href="/websites/<%=website.id%>/links">Links</a>
+<br>
+<a href="/websites/<%=website.id%>/tags">Tags</a>

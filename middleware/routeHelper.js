@@ -9,9 +9,15 @@ var routeHelpers = {
     }
   },
 
-  // ensureCorrectUser: function(req, res, next) {
-
-  // }
+   ensureCorrectUser: function(req, res, next) {
+    db.Website.findById(req.params.id, function(err, website) {
+      if(website.user !==  req.session.id) {
+        res.redirect('/websites');
+      } else {
+        return next();
+      }
+    });
+  },
 
   preventLoginSignup: function(req, res, next) {
     if(req.session.id !== null && req.session.id !== undefined) {

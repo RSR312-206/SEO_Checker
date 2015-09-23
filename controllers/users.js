@@ -2,9 +2,8 @@ var db = require('../models/index');
 var loginMiddleware = require('../middleware/loginHelper');
 var routeMiddleware = require('../middleware/routeHelper');
 
-//home page
-
-//main page app.get goes here
+//TODO
+//Add route helpers, fix logout
 
 //signup page
 
@@ -45,5 +44,8 @@ app.post('/users/login', routeMiddleware.preventLoginSignup, function(req, res) 
 })
 
 //logout
+app.get('/users/logout', function(req, res) {
+  req.logout();
+  res.redirect('/');
+});
 
-//logout route goes here
