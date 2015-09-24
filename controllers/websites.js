@@ -12,25 +12,6 @@ app.get('/websites', function(req, res) {
     if (err) {
       res.render('404');
     } else {
-      var CryptoJS = require("crypto-js");
-      var SHA1 = require("crypto-js/sha1");
-      var accessId;
-      var secretKey;
-      var objectURL = website;
-      console.log(objectURL);
-      var expires = Date.now() + 300;
-      var stringToSign = accessId + "\n" + expires;
-      var cols = "32";
-      var hash = CryptoJS.enc.Base64.stringify(CryptoJS.HmacSHA1(stringToSign, secretKey));
-      var signature = encodeURIComponent(hash);
-      var requestUrl = "http://lsapi.seomoz.com/linkscape/url-metrics/"+encodeURIComponent(objectURL)+"?Cols="+cols+"&Limit=10&AccessID="+accessId+"&Expires="+expires+"&Signature="+signature;
-    request.get(requestUrl, function(error, response, body) {
-      if(error) {
-        res.render('404')
-      } else {
-        var backlinks = JSON.parse(body);
-      }
-    });
     res.render('websites/index', {websites: website});
     }
   });
@@ -44,26 +25,41 @@ app.get('/websites/new', function(req, res) {
 app.post('/websites', function(req, res) {
   db.Website.create(req.body.website,
     function(err, website) {
-      if(err) {
-        res.render('404');
-      } else {
-        res.redirect('/websites')
-      }
-    });
+      if(err) throw err;
+
+      var CryptoJS = require("crypto-js");
+      var SHA1 = require("crypto-js/sha1");
+      var accessId;
+      var secretKey ;
+      var objectURL = website.url;
+      var expires = Date.now() + 300;
+      var stringToSign = accessId + "\n" + expires;
+      var cols = "32";
+      var hash = CryptoJS.enc.Base64.stringify(CryptoJS.HmacSHA1(stringToSign, secretKey));
+      var signature = encodeURIComponent(hash);
+      var requestUrl = "http://lsapi.seomoz.com/linkscape/url-metrics/"+encodeURIComponent(objectURL)+"?Cols="+cols+"&Limit=10&AccessID="+accessId+"&Expires="+expires+"&Signature="+signature;
+
+      request.get(requestUrl, function(error, response, body) {
+        var ueid = JSON.parse(body);
+        db.siteLink.create(ueid, function(err, siteLink) {
+          if(err) throw err;
+          website.link = siteLink;
+          website.save();
+          res.redirect('/websites');
+        });
+      });
+  });
 });
 
 //show
 
-app.get('/websites/:id', function(req, res) {
-  db.Website.findById(req.params.id, function(err, website) {
-    if(err) {
-      res.render('404');
-    } else {
-      res.render('websites/show', {website: website});
-    }
+app.get('/websites/:id', function (req, res) {
+  db.Website.findById(req.params.id).populate('link').exec(
+  function(err, website) {
+    if(err) throw err;
+    res.render('websites/show', {website: website} );
   });
 });
-
 
 //update
 

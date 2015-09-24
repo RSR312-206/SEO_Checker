@@ -4,13 +4,15 @@
 <table>
   <tbody>
 <% websites.forEach(function(website){ %>
-  <tr><td><a href="/websites/<%=website._id%>/"><%= website.url %></a></td></tr>
+  <tr><td><a href="/websites/<%=website._id%>/"><%= website.url %></a>
+  </td></tr>
 <% }); %>
   </tbody>
 <table>
 <br>
 <a href="/websites/new">check a new website</a>
 <br>
+
 <form action="/users/logout" method="GET">
   <button>Logout</button>
 </form>

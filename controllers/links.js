@@ -7,6 +7,7 @@ var SHA1 = require("crypto-js/sha1");
 
 app.get('/websites/:website_id/links', function(req, res) {
   db.Website.findById(req.params.website_id).exec(function(err, website) {
+    //console.log(website);
     res.render('links/index');
   });
 });

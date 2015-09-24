@@ -1,0 +1,109 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--save',
+1 verbose cli   'crypto-js/sh1' ]
+2 info using npm@2.11.3
+3 info using node@v0.12.7
+4 verbose install initial load of /Users/rachelroutson/workspace/seo_checker/package.json
+5 warn package.json seo_checker@1.0.0 No description
+6 warn package.json seo_checker@1.0.0 No repository field.
+7 warn package.json seo_checker@1.0.0 No README data
+8 verbose installManyTop reading scoped package data from /Users/rachelroutson/workspace/seo_checker/node_modules/bcrypt/package.json
+9 verbose installManyTop reading scoped package data from /Users/rachelroutson/workspace/seo_checker/node_modules/body-parser/package.json
+10 verbose installManyTop reading scoped package data from /Users/rachelroutson/workspace/seo_checker/node_modules/cookie-session/package.json
+11 verbose installManyTop reading scoped package data from /Users/rachelroutson/workspace/seo_checker/node_modules/crypto-js/package.json
+12 verbose installManyTop reading scoped package data from /Users/rachelroutson/workspace/seo_checker/node_modules/ejs/package.json
+13 verbose installManyTop reading scoped package data from /Users/rachelroutson/workspace/seo_checker/node_modules/express/package.json
+14 verbose installManyTop reading scoped package data from /Users/rachelroutson/workspace/seo_checker/node_modules/method-override/package.json
+15 verbose installManyTop reading scoped package data from /Users/rachelroutson/workspace/seo_checker/node_modules/mongo/package.json
+16 verbose installManyTop reading scoped package data from /Users/rachelroutson/workspace/seo_checker/node_modules/mongoose/package.json
+17 verbose installManyTop reading scoped package data from /Users/rachelroutson/workspace/seo_checker/node_modules/request/package.json
+18 info package.json mongo@0.1.0 No repository field.
+19 info package.json mongo@0.1.0 No license field.
+20 verbose readDependencies loading dependencies from /Users/rachelroutson/workspace/seo_checker/package.json
+21 silly cache add args [ 'crypto-js/sh1', null ]
+22 verbose cache add spec crypto-js/sh1
+23 silly cache add parsed spec { raw: 'crypto-js/sh1',
+23 silly cache add   scope: null,
+23 silly cache add   name: null,
+23 silly cache add   rawSpec: 'crypto-js/sh1',
+23 silly cache add   spec: 'github:crypto-js/sh1',
+23 silly cache add   type: 'hosted',
+23 silly cache add   hosted:
+23 silly cache add    { type: 'github',
+23 silly cache add      ssh: 'git@github.com:crypto-js/sh1.git',
+23 silly cache add      sshUrl: 'git+ssh://git@github.com/crypto-js/sh1.git',
+23 silly cache add      httpsUrl: 'git+https://github.com/crypto-js/sh1.git',
+23 silly cache add      gitUrl: 'git://github.com/crypto-js/sh1.git',
+23 silly cache add      shortcut: 'github:crypto-js/sh1',
+23 silly cache add      directUrl: 'https://raw.githubusercontent.com/crypto-js/sh1/master/package.json' } }
+24 verbose addRemoteGit caching crypto-js/sh1
+25 verbose addRemoteGit crypto-js/sh1 is a repository hosted by github
+26 silly tryGitProto attempting to clone git://github.com/crypto-js/sh1.git
+27 silly tryClone cloning crypto-js/sh1 via git://github.com/crypto-js/sh1.git
+28 verbose tryClone git-github-com-crypto-js-sh1-git-9d8802bc not in flight; caching
+29 info git [ 'clone',
+29 info git   '--template=/Users/rachelroutson/.npm/_git-remotes/_templates',
+29 info git   '--mirror',
+29 info git   'git://github.com/crypto-js/sh1.git',
+29 info git   '/Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-9d8802bc' ]
+30 verbose git clone --template=/Users/rachelroutson/.npm/_git-remotes/_templates --mirror git://github.com/crypto-js/sh1.git /Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-9d8802bc: Cloning into bare repository '/Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-9d8802bc'...
+30 verbose git clone --template=/Users/rachelroutson/.npm/_git-remotes/_templates --mirror git://github.com/crypto-js/sh1.git /Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-9d8802bc: fatal: remote error:
+30 verbose git clone --template=/Users/rachelroutson/.npm/_git-remotes/_templates --mirror git://github.com/crypto-js/sh1.git /Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-9d8802bc:   Repository not found.
+31 silly tryHTTPS attempting to clone git+https://github.com/crypto-js/sh1.git
+32 silly tryClone cloning crypto-js/sh1 via git+https://github.com/crypto-js/sh1.git
+33 verbose tryClone https-github-com-crypto-js-sh1-git-8b789659 not in flight; caching
+34 info git [ 'clone',
+34 info git   '--template=/Users/rachelroutson/.npm/_git-remotes/_templates',
+34 info git   '--mirror',
+34 info git   'https://github.com/crypto-js/sh1.git',
+34 info git   '/Users/rachelroutson/.npm/_git-remotes/https-github-com-crypto-js-sh1-git-8b789659' ]
+35 verbose git clone --template=/Users/rachelroutson/.npm/_git-remotes/_templates --mirror https://github.com/crypto-js/sh1.git /Users/rachelroutson/.npm/_git-remotes/https-github-com-crypto-js-sh1-git-8b789659: Cloning into bare repository '/Users/rachelroutson/.npm/_git-remotes/https-github-com-crypto-js-sh1-git-8b789659'...
+35 verbose git clone --template=/Users/rachelroutson/.npm/_git-remotes/_templates --mirror https://github.com/crypto-js/sh1.git /Users/rachelroutson/.npm/_git-remotes/https-github-com-crypto-js-sh1-git-8b789659: remote: Invalid username or password.
+35 verbose git clone --template=/Users/rachelroutson/.npm/_git-remotes/_templates --mirror https://github.com/crypto-js/sh1.git /Users/rachelroutson/.npm/_git-remotes/https-github-com-crypto-js-sh1-git-8b789659: fatal: Authentication failed for 'https://github.com/crypto-js/sh1.git/'
+36 silly trySSH attempting to clone git@github.com:crypto-js/sh1.git
+37 silly tryClone cloning crypto-js/sh1 via git@github.com:crypto-js/sh1.git
+38 verbose tryClone git-github-com-crypto-js-sh1-git-ac56d67f not in flight; caching
+39 info git [ 'clone',
+39 info git   '--template=/Users/rachelroutson/.npm/_git-remotes/_templates',
+39 info git   '--mirror',
+39 info git   'git@github.com:crypto-js/sh1.git',
+39 info git   '/Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-ac56d67f' ]
+40 error git clone --template=/Users/rachelroutson/.npm/_git-remotes/_templates --mirror git@github.com:crypto-js/sh1.git /Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-ac56d67f: Cloning into bare repository '/Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-ac56d67f'...
+40 error git clone --template=/Users/rachelroutson/.npm/_git-remotes/_templates --mirror git@github.com:crypto-js/sh1.git /Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-ac56d67f: ERROR: Repository not found.
+40 error git clone --template=/Users/rachelroutson/.npm/_git-remotes/_templates --mirror git@github.com:crypto-js/sh1.git /Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-ac56d67f: fatal: Could not read from remote repository.
+40 error git clone --template=/Users/rachelroutson/.npm/_git-remotes/_templates --mirror git@github.com:crypto-js/sh1.git /Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-ac56d67f:
+40 error git clone --template=/Users/rachelroutson/.npm/_git-remotes/_templates --mirror git@github.com:crypto-js/sh1.git /Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-ac56d67f: Please make sure you have the correct access rights
+40 error git clone --template=/Users/rachelroutson/.npm/_git-remotes/_templates --mirror git@github.com:crypto-js/sh1.git /Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-ac56d67f: and the repository exists.
+41 verbose stack Error: Command failed: git clone --template=/Users/rachelroutson/.npm/_git-remotes/_templates --mirror git@github.com:crypto-js/sh1.git /Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-ac56d67f
+41 verbose stack Cloning into bare repository '/Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-ac56d67f'...
+41 verbose stack ERROR: Repository not found.
+41 verbose stack fatal: Could not read from remote repository.
+41 verbose stack
+41 verbose stack Please make sure you have the correct access rights
+41 verbose stack and the repository exists.
+41 verbose stack
+41 verbose stack     at ChildProcess.exithandler (child_process.js:751:12)
+41 verbose stack     at ChildProcess.emit (events.js:110:17)
+41 verbose stack     at maybeClose (child_process.js:1015:16)
+41 verbose stack     at Socket.<anonymous> (child_process.js:1183:11)
+41 verbose stack     at Socket.emit (events.js:107:17)
+41 verbose stack     at Pipe.close (net.js:485:12)
+42 verbose cwd /Users/rachelroutson/workspace/seo_checker
+43 error Darwin 14.3.0
+44 error argv "node" "/usr/local/bin/npm" "install" "--save" "crypto-js/sh1"
+45 error node v0.12.7
+46 error npm  v2.11.3
+47 error code 128
+48 error Command failed: git clone --template=/Users/rachelroutson/.npm/_git-remotes/_templates --mirror git@github.com:crypto-js/sh1.git /Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-ac56d67f
+48 error Cloning into bare repository '/Users/rachelroutson/.npm/_git-remotes/git-github-com-crypto-js-sh1-git-ac56d67f'...
+48 error ERROR: Repository not found.
+48 error fatal: Could not read from remote repository.
+48 error
+48 error Please make sure you have the correct access rights
+48 error and the repository exists.
+49 error If you need help, you may report this error at:
+49 error     <https://github.com/npm/npm/issues>
+50 verbose exit [ 1, true ]
