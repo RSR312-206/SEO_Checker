@@ -4,9 +4,12 @@
  var Website = require('./website');
 
 var linkSchema = new Schema({
-  link: String,
-  imgLink: String,
   ueid: Number,
+  urls: Array,
+  link: String,
+  success: Array,
+  fail: Array,
+  imgLink: String,
   website: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: "Website"

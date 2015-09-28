@@ -7,8 +7,7 @@ var request = require('request');
 var loginMiddleware = require('./middleware/loginHelper');
 var routeMiddleware = require('./middleware/routeHelper');
 var request = require('request');
-var CryptoJS = require("crypto-js");
-var SHA1 = require("crypto-js/sha1");
+var cheerio = require('cheerio')
 
 
 app = express();
@@ -18,6 +17,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(express.static("public"));
 app.use(loginMiddleware);
+require('./controllers/index');
 
 //session
 app.use(session({

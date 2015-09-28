@@ -1,3 +1,5 @@
+//this schema is for the next version of the app
+
 var mongoose = require('mongoose');
  var Schema = mongoose.Schema;
  var Website = require('./website');

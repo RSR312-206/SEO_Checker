@@ -1,4 +1,4 @@
-<h1><%= website.url %></h1>
+<h1><a href='<%= website.url %>'><%=website.url%></a></h1>
 <form action="/websites/<%=website.id%>?_method=DELETE" method="POST">
   <input type='submit'value="DELETE">
 </form>
@@ -10,6 +10,26 @@
   <p> Your websites' number of Authority-passing backlinks, including followed links and 301 (permanent) redirects:  <%= website.link[0].ueid %>
   </p>
 
+  <div>
+    <table>
+      <thead>
+
+      <tbody>
+        <tr>
+          <% website.link[0].success.forEach(function(status) { %>
+            <tr><td><%= status %> &#x2713;</tr></td>
+          <% }); %>
+      </tr>
+      <tr>
+          <% website.link[0].fail.forEach(function(status) { %>
+            <tr><td><%= status %>&#x2717;</tr></td>
+          <% }); %>
+      </tr>
+    </tbody>
+  </div>
+
+
+<a href="/websites">home</a>
 
 </body>
 

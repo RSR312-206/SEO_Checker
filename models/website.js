@@ -16,8 +16,6 @@ var websiteSchema = new Schema({
   }]
 });
 
-//refactor: add api call as a hook
-
 var Website = mongoose.model("Website", websiteSchema );
 
 module.exports = Website;
