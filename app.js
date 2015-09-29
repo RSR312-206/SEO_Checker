@@ -1,25 +1,20 @@
 var express = require('express');
+app = express();
+
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var db = require('./models');
-var session = require('cookie-session');
+session = require('cookie-session');
 var request = require('request');
 var loginMiddleware = require('./middleware/loginHelper');
 var routeMiddleware = require('./middleware/routeHelper');
 var request = require('request');
 var cheerio = require('cheerio');
 
-
-app = express();
-
-app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(express.static("public"));
-require('./controllers/index');
-
-//middleware
-app.use(loginMiddleware);
+app.set('view engine', 'ejs');
 
 //session
 app.use(session({
@@ -27,6 +22,9 @@ app.use(session({
   secret: 'seo_secret',
   name: 'seo'
 }));
+
+//middleware
+app.use(loginMiddleware);
 
 //Controllers
 require('./controllers/index');

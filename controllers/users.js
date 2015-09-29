@@ -11,10 +11,11 @@ app.get('/users/signup', function(req, res) {
   res.render('users/signup');
 });
 
-app.post('/users/signup', function(req, res) {
+app.post('/users/signup', routeMiddleware.preventLoginSignup, function(req, res) {
   var newUser = req.body.user;
   console.log(newUser);
   db.User.create(newUser, function(err, user) {
+    console.log(user);
     if (user) {
       req.login(user);
       res.redirect('/websites');
@@ -33,6 +34,7 @@ app.get('/users/login', function(req, res) {
 app.post('/users/login', routeMiddleware.preventLoginSignup, function(req, res) {
   db.User.authenticate(req.body.user,
     function(err, user) {
+      console.log(user);
       if(!err && user !== null) {
         req.login(user);
         res.redirect('/websites')

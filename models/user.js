@@ -1,9 +1,7 @@
-var mongoose = require('mongoose'),
-  Schema = mongoose.Schema,
-  bcrypt = require('bcrypt'),
-  SALT_WORK_FACTOR = 10;
-
-var Website = require('./website');
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var bcrypt = require('bcrypt');
+var SALT_WORK_FACTOR = 10;
 
 
 var userSchema = new Schema({
@@ -28,18 +26,18 @@ userSchema.pre('save', function(next) {
   if (!user.isModified('password')) {
     return next();
   }
-    bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+    if (err) {
+      return next(err);
+    }
+    bcrypt.hash(user.password, salt, function(err, hash) {
       if (err) {
         return next(err);
       }
-      bcrypt.hash(user.password, salt, function(err, hash) {
-        if (err) {
-          return next(err);
-        }
-        user.password = hash;
-        next();
-        });
+    user.password = hash;
+    next();
     });
+  });
 });
 
 userSchema.statics.authenticate = function(formData, callback) {
