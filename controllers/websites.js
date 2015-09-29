@@ -30,8 +30,8 @@ app.post('/websites', function(req, res) {
     //SEOMoz api call for global backlinks count
     var CryptoJS = require("crypto-js");
     var SHA1 = require("crypto-js/sha1");
-    var accessId  = ;
-    var secretKey = ;
+    var accessId  = 'mozscape-' + process.env.accessId;
+    var secretKey = process.env.secretKey;
     var objectURL = website.url;
     var expires = Date.now() + 300;
     var stringToSign = accessId + "\n" + expires;
@@ -52,7 +52,6 @@ app.post('/websites', function(req, res) {
             var $ = cheerio.load(html);
             $('a').each(function(i, element){
               var aTag = $(this);
-              console.log(aTag.attr('href'));
               if(aTag.attr('href') !== undefined) {
               urls.push(aTag.attr('href'));
               }
@@ -73,6 +72,7 @@ app.post('/websites', function(req, res) {
               if(err) {
                 console.log(err)
               }
+              console.log(siteLink);
               website.link = siteLink;
               website.save();
             });
@@ -91,7 +91,6 @@ app.get('/websites/:id', function (req, res) {
     if(err) {
       console.log(err);
     }
-    console.log(website);
     res.render('websites/show', {website: website} );
   });
 });
@@ -100,7 +99,6 @@ app.get('/websites/:id', function (req, res) {
 app.get("/websites/:id/edit", function (req,res) {
   db.Website.findById(req.params.id).exec(
     function (err, website) {
-      console.log(website);
       if (err) {
         console.log(err)
       }
