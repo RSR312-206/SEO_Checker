@@ -7,7 +7,7 @@ var request = require('request');
 var loginMiddleware = require('./middleware/loginHelper');
 var routeMiddleware = require('./middleware/routeHelper');
 var request = require('request');
-var cheerio = require('cheerio')
+var cheerio = require('cheerio');
 
 
 app = express();
@@ -16,8 +16,10 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 app.use(express.static("public"));
-app.use(loginMiddleware);
 require('./controllers/index');
+
+//middleware
+app.use(loginMiddleware);
 
 //session
 app.use(session({
@@ -30,7 +32,7 @@ app.use(session({
 require('./controllers/index');
 
 
-
+//server
 app.listen(3000, function() {
   console.log('server is running');
 });

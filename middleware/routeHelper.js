@@ -5,14 +5,14 @@ var routeHelpers = {
     if(req.session.id !== null && req.session.id !== undefined) {
       return next();
     } else {
-      res.redirect('/users/login');
+      res.redirect('/login');
     }
   },
 
    ensureCorrectUser: function(req, res, next) {
-    db.Website.findById(req.params.id, function(err, website) {
-      if(website.user !==  req.session.id) {
-        res.redirect('/websites');
+    db.User.findById(req.params.id, function(err, user) {
+      if(user._id !==  req.session.id) {
+        res.redirect('/login');
       } else {
         return next();
       }
@@ -20,6 +20,7 @@ var routeHelpers = {
   },
 
   preventLoginSignup: function(req, res, next) {
+    console.log(req.session);
     if(req.session.id !== null && req.session.id !== undefined) {
       res.render('websites/index');
     } else {

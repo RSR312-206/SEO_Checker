@@ -1,36 +1,39 @@
-<h1><a href='<%= website.url %>'><%=website.url%></a></h1>
-<form action="/websites/<%=website.id%>?_method=DELETE" method="POST">
-  <input type='submit'value="DELETE">
-</form>
-<a href="/websites/<%=website.id%>/edit">edit your webpage</a>
+<% include ../partials/header %><body>
+  <h1><a href='<%= website.url %>'><%=website.url%></a></h1>
+
 <br>
 <h2>Link Data: </h2>
 
-<body>
   <p> Your websites' number of Authority-passing backlinks, including followed links and 301 (permanent) redirects:  <%= website.link[0].ueid %>
   </p>
 
-  <div>
-    <table>
-      <thead>
-
+  <div class='col-md-10'>
+    <table class='table'>
+      <thead class='table-striped'>
+      </thead>
       <tbody>
         <tr>
           <% website.link[0].success.forEach(function(status) { %>
-            <tr><td><%= status %> &#x2713;</tr></td>
+            <tr class='success'><td><%= status %> <span class='pull-right'>&#x2713;</span></tr></td>
           <% }); %>
       </tr>
-      <tr>
+      <tr >
           <% website.link[0].fail.forEach(function(status) { %>
-            <tr><td><%= status %>&#x2717;</tr></td>
+            <tr class='danger'><td><a href="<%= status %>"</a><%= status %><span class='pull-right'>&#x2717;</span></tr></td>
           <% }); %>
       </tr>
     </tbody>
+  </table>
   </div>
+<br>
+<div class='col-md-2'>
+<form action="/websites/<%=website.id%>?_method=DELETE" method="POST">
+  <input type='submit'class="btn btn-danger"value="DELETE">
+</form>
 
-
+<a href="/websites/<%=website.id%>/edit">edit your webpage</a>
+<br>
 <a href="/websites">home</a>
-
-</body>
-
+</div>
+<% include ../partials/footer %>
 

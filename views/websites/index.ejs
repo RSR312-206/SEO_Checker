@@ -1,29 +1,24 @@
-<h1>SEO Checker</h1>
-<p>discover broken links, matching keywords to meta tags, and other useful data about your website
-</p>
-<table>
-  <tbody>
-<% websites.forEach(function(website){ %>
-  <tr><td><a href="/websites/<%=website._id%>/"><%= website.url %></a>
-  </td></tr>
-  <tr><td><form action="/websites/<%=website.id%>?_method=DELETE" method="POST">
-  <input type='submit'value="DELETE"></tr></td>
-</form>
-<% }); %>
-  </tbody>
-<table>
-<br>
-<div>
-  <p>To check a new website, begin with 'http' followed by the address.
-    for example:
-    <br>
-    <b>http://jonlanman.com</b>
+<% include ../partials/header %>
+<body>
 
-  </p>
-</div>
-<a href="/websites/new">check a new website</a>
-<br>
+    <div class='container-fluid'>
+      <table class='table'>
+        <tbody class='table-striped'>
 
-<form action="/users/logout" method="GET">
-  <button>Logout</button>
-</form>
+        <%  websites.forEach(function(website){ %>
+
+        <tr><td><a href="/websites/<%=website._id%>/"><%= website.url %></a><span class='pull-right'><a href="/websites/<%=website._id%>/edit"> EDIT </a></span>
+        </td></tr>
+
+        <% }); %>
+        </tbody>
+    </table>
+  </div>
+  <br>
+  <div>
+
+  </div>
+  <button><a href="/websites/new">Check a new website</a></button>
+  <br>
+
+<% include ../partials/footer %>

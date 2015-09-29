@@ -1,5 +1,12 @@
+<% include ../partials/header %>
 
 <h3>enter the website you'd like to analyze</h3>
+ <p>To check a new website, begin with 'http' followed by the address.
+      for example:
+      <br>
+      <b>http://jonlanman.com</b>
+
+    </p>
 
 <form method="POST" action="/websites">
   <label for="website">Full URL: </label>
@@ -19,3 +26,4 @@
   <input type="submit" value="Submit"/>
 </form>
 
+<% include ../partials/footer %>
