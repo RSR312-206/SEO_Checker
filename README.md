@@ -1,6 +1,8 @@
 SEO Checker
 ============
 
+https://radiant-plains-5006.herokuapp.com/websites
+
 This tool enables the user check their website for key indicators of good SEO. Google provides best practices for websites to ensure they are ranking well in Google Searches. This can be found here:
 
  This tool checks your webiste for the following:
@@ -14,7 +16,6 @@ This tool enables the user check their website for key indicators of good SEO. G
 4. User can create a login (or not)
 
 5. User's websites are only visible by logged in user (coming soon)
-
 
 
 Technologies used:
