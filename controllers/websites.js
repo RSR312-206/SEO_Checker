@@ -52,7 +52,7 @@ app.post('/websites', function(req, res) {
             var $ = cheerio.load(html);
             $('a').each(function(i, element){
               var aTag = $(this);
-              if(aTag.attr('href') !== undefined) {
+              if(aTag.attr('href') !== undefined && (aTag.attr('href') !== '#')) {
               urls.push(aTag.attr('href'));
               }
             });
