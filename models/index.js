@@ -1,5 +1,5 @@
 var mongoose = require('mongoose')
-mongoose.connect("mongodb://localhost/seo_checker");
+mongoose.connect( process.env.MONGOLAB_URI || "mongodb://localhost/radiant-plains-5006")
 
 module.exports.siteLink = require('./link');
 module.exports.Tag = require('./tag');
