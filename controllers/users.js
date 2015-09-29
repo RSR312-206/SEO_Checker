@@ -11,7 +11,7 @@ app.get('/users/signup', function(req, res) {
   res.render('users/signup');
 });
 
-app.post('/users/signup', routeMiddleware.preventLoginSignup, function(req, res) {
+app.post('/users/signup', function(req, res) {
   var newUser = req.body.user;
   console.log(newUser);
   db.User.create(newUser, function(err, user) {

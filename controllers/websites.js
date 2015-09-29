@@ -57,7 +57,6 @@ app.post('/websites', function(req, res) {
               urls.push(aTag.attr('href'));
               }
             });
-            console.log(urls);
           }
           urls.forEach(function(url) {
             request(url, function (error, response, body) {
@@ -76,7 +75,6 @@ app.post('/websites', function(req, res) {
               }
               website.link = siteLink;
               website.save();
-              console.log(website.link);
             });
           });
         });

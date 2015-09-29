@@ -30,5 +30,5 @@ Thoughts on this project:
 
 3. the next version of this app will include a check for Meta tags  to see if they match keywords selected by user as well as a check to ensure a description exists in the header.
 
-4. I'm extremely excited about refactoring my code. If you're reading this and have any opinions, please don't hesitate to share.
+4. I'm extremely excited about refactoring my code  (and building out the project more). If you're reading this and have any opinions, please don't hesitate to share.
 

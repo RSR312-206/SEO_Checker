@@ -20,7 +20,6 @@ var routeHelpers = {
   },
 
   preventLoginSignup: function(req, res, next) {
-    console.log(req.session);
     if(req.session.id !== null && req.session.id !== undefined) {
       res.render('websites/index');
     } else {
