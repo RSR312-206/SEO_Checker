@@ -30,8 +30,8 @@ app.post('/websites', function(req, res) {
     //SEOMoz api call for global backlinks count
     var CryptoJS = require("crypto-js");
     var SHA1 = require("crypto-js/sha1");
-    var accessId  = 'mozscape-870770ed58';
-    var secretKey = 'a3581a0bfd8d41f92773824a700d252e';
+    var accessId  = ;
+    var secretKey = ;
     var objectURL = website.url;
     var expires = Date.now() + 300;
     var stringToSign = accessId + "\n" + expires;
