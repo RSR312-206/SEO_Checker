@@ -95,26 +95,26 @@ app.get('/websites/:id', function (req, res) {
   });
 });
 
-//Edit
-app.get("/websites/:id/edit", function (req,res) {
-  db.Website.findById(req.params.id).exec(
-    function (err, website) {
-      if (err) {
-        console.log(err)
-      }
-      res.render("websites/edit", {website: website});
-  });
-});
+// //Edit
+// app.get("/websites/:id/edit", function (req,res) {
+//   db.Website.findById(req.params.id).exec(
+//     function (err, website) {
+//       if (err) {
+//         console.log(err)
+//       }
+//       res.render("websites/edit", {website: website});
+//   });
+// });
 
-//Update
-app.put("/websistes/:id", function (req, res) {
-  db.Website.findByIdAndUpdate(req.params.id, req.body.website, function (err, website) {
-      if (err) {
-        console.log(err);
-      }
-      res.redirect('/websites');
-    });
-});
+// //Update
+// app.put("/websistes/:id", function (req, res) {
+//   db.Website.findByIdAndUpdate(req.params.id, req.body.website, function (err, website) {
+//       if (err) {
+//         console.log(err);
+//       }
+//       res.redirect('/websites');
+//     });
+// });
 
 //delete
 

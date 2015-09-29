@@ -1,24 +1,16 @@
 <% include ../partials/header %>
 <body>
-
-    <div class='container-fluid'>
-      <table class='table'>
-        <tbody class='table-striped'>
-
-        <%  websites.forEach(function(website){ %>
-
-        <tr><td><a href="/websites/<%=website._id%>/"><%= website.url %></a><span class='pull-right'><a href="/websites/<%=website._id%>/edit"> EDIT </a></span>
+  <div class='container-fluid' class='col-md-5'>
+    <table class='table'>
+      <tbody class='table-striped'>
+      <%  websites.forEach(function(website){ %>
+        <tr><td><a href="/websites/<%=website._id%>/"><%= website.url %></a>
         </td></tr>
-
-        <% }); %>
-        </tbody>
+      <% }); %>
+      </tbody>
     </table>
   </div>
   <br>
-  <div>
-
-  </div>
   <button><a href="/websites/new">Check a new website</a></button>
   <br>
-
 <% include ../partials/footer %>

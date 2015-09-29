@@ -1,12 +1,10 @@
 <% include ../partials/header %><body>
-  <h1><a href='<%= website.url %>'target="_blank"><%=website.url%></a></h1>
+<h1><a href='<%= website.url %>'target="_blank"><%=website.url%></a></h1>
 
 <br>
 <h2>Link Data: </h2>
-
   <p> Your websites' number of Authority-passing backlinks, including followed links and 301 (permanent) redirects:  <%= website.link[0].ueid %>
   </p>
-
   <div class='col-md-10'>
     <table class='table'>
       <thead class='table-striped'>
@@ -14,26 +12,24 @@
       <tbody>
         <tr>
           <% website.link[0].success.forEach(function(status) { %>
-            <tr class='success'><td><a href="<%= status %>"target="_blank"</a><%= status %><span class='pull-right'>&#x2713;</span></tr></td>
+            <tr class='success'><td><a href="<%= status %>"target="_blank"><%= status %></a><span class='pull-right'>&#x2713;</span></tr></td>
           <% }); %>
-      </tr>
-      <tr >
+        </tr>
+        <tr >
           <% website.link[0].fail.forEach(function(status) { %>
-            <tr class='danger'><td><a href="<%= status %>"target="_blank"</a><%= status %><span class='pull-right'>&#x2717;</span></tr></td>
+            <tr class='danger'><td><a href="<%= status %>"target="_blank"><%= status %></a><span class='pull-right'>&#x2717;</span></tr></td>
           <% }); %>
-      </tr>
-    </tbody>
-  </table>
+        </tr>
+      </tbody>
+    </table>
   </div>
-<br>
-<div class='col-md-2'>
-<form action="/websites/<%=website.id%>?_method=DELETE" method="POST">
-  <input type='submit'class="btn btn-danger"value="DELETE">
-</form>
-
-<a href="/websites/<%=website.id%>/edit">edit your webpage</a>
-<br>
-<a href="/websites">home</a>
-</div>
+  <br>
+  <div class='col-md-2'>
+    <form action="/websites/<%=website.id%>?_method=DELETE" method="POST">
+      <input type='submit'class="btn btn-danger"value="DELETE">
+    </form>
+  <br>
+  <a href="/websites">home</a>
+  </div>
 <% include ../partials/footer %>
 

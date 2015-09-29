@@ -1,9 +1,17 @@
-<form method="POST"action='/users/signup'>
+<% include ../partials/header %><body>
+
+
+ <form method="POST"action='/users/signup'>
   <label for="username" id="username"></label>
-  Username: <input type="text" name="user[username]"></input>
+    Username: <input type="text" name="user[username]"></input>
   <label for="password" id="password"></label>
-  Password: <input type="password"name="user[password]"></input>
+    Password: <input type="password"name="user[password]"></input>
   <input type="submit" value="Sign Up"></input>
 </form>
-
+  <br>
   <a href='/users/login'>Already have an account? Login here</a>
+    <br><br>
+  <a href='/websites'>no thanks, just take me to the site</a>
+
+  <% include ../partials/footer %><body>
+
