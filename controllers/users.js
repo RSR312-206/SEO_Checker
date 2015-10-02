@@ -42,11 +42,11 @@ app.post('/users/login', routeMiddleware.preventLoginSignup, function(req, res) 
         res.redirect('/users/login');
       }
     });
-})
+});
 
 //logout
 app.get('/users/logout', function(req, res) {
   req.logout();
-  res.redirect('/');
+  res.render('users/index');
 });
 

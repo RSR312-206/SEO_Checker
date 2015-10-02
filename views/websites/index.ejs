@@ -4,7 +4,9 @@
     <table class='table'>
       <tbody class='table-striped'>
       <%  websites.forEach(function(website){ %>
-        <tr><td><a href="/websites/<%=website._id%>/"><%= website.url %></a>
+        <tr><td><a href="/websites/<%=website._id%>/"><%= website.url %></a><form action="/websites/<%=website.id%>?_method=DELETE" method="POST">
+      <input type='submit'class="btn btn-danger"value="DELETE">
+    </form>
         </td></tr>
       <% }); %>
       </tbody>

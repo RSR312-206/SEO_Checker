@@ -47,13 +47,18 @@ app.post('/websites', function(req, res) {
       var success = [];
       var fail = [];
         request(website.url, function (error, response, html) {
+          if(error) {
+            console.log(error);
+            res.redirect('404');
+          }
           //scrapes website for all valid href tags and pushes into urls array
           if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
             $('a').each(function(i, element){
               var aTag = $(this);
-              if(aTag.attr('href') !== undefined && (aTag.attr('href') !== '#')) {
-              urls.push(aTag.attr('href'));
+              var href = (aTag.attr('href'));
+              if(href !== undefined && (href !== '#')) {
+              urls.push(href);
               }
             });
           }
@@ -94,6 +99,7 @@ app.get('/websites/:id', function (req, res) {
     res.render('websites/show', {website: website} );
   });
 });
+//probably no need to edit orginal domain/url
 
 // //Edit
 // app.get("/websites/:id/edit", function (req,res) {
